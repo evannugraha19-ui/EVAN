@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Holiday - Evan Nugraha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #cce6ff, #e6f2ff);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4da6ff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #b3d9ff;
+            padding: 10px;
+            width: 20%;
+            float: left;
+            height: 100vh;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #004d99;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            color: #003366;
+        }
+        section {
+            float: left;
+            width: 55%;
+            padding: 20px;
+            min-height: 80vh;
+        }
+        aside {
+            float: left;
+            width: 25%;
+            padding: 20px;
+            background-color: #e6f0ff;
+        }
+        footer {
+            clear: both;
+            text-align: center;
+            padding: 10px;
+            background-color: #4da6ff;
+            color: white;
+        }
+        img {
+            border-radius: 10px;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="assets/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>My Holiday</h1>
+        <p>All About My Beautiful Holiday Journey in Bali</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="showPage('home')">🏠 Home</a></li>
+            <li><a onclick="showPage('alam')">🌳 Wisata Alam</a></li>
+            <li><a onclick="showPage('bahari')">🌊 Wisata Bahari</a></li>
+            <li><a onclick="showPage('kuliner')">🍜 Wisata Kuliner</a></li>
+            <li><a onclick="showPage('museum')">🏛️ Museum</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <!-- Halaman Utama -->
+        <div id="home" class="page active">
+            <h2>Selamat Datang di My Holiday in Bali!</h2>
+            <p>Liburan kali ini sangat menyenangkan! Saya berkunjung ke beberapa tempat wisata yang menakjubkan dan menikmati keindahan alam Indonesia.</p>
+            <img src="wisata indonesia.jpg" alt="Macam-macam wisata di Indonesia" width="100%">
+            <h3>Video Kenangan Liburan:</h3>
+            <video controls width="100%">
+                <source src="bali.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Wisata Alam -->
+        <div id="alam" class="page">
+            <h2>Wisata Alam</h2>
+            <p>Bali mempunyai Savana Tianyar yang terletak di Karangasem, savana ini menawarkan pemandangan luas dengan latar belakang Gunung Agung. Saya mengunjunginya bersama keluarga saya</p>
+            <img src="savana.jpg" alt="Wisata Alam" width="100%">
+        </div>
+
+        <!-- Wisata Bahari -->
+        <div id="bahari" class="page">
+            <h2>Wisata Bahari</h2>
+            <p>Wisata bahari di Indonesia sangat terkenal! Dari Raja Ampat, Bunaken, hingga Gili Trawangan! Saya dan keluarga saya sempat berkunjung ke pantai Kuta, Bali.</p>
+            <img src="pantai.jpg" alt="Wisata Bahari" width="100%">
+        </div>
+
+        <!-- Wisata Kuliner -->
+        <div id="kuliner" class="page">
+            <h2>Wisata Kuliner</h2>
+            <p>Saya juga berkeliling Bali untuk mencoba semua wisata kulinernya, dan itu sangat menyenangkan!</p>
+            <img src="kuliner.jpg" alt="Wisata Kuliner" width="100%">
+        </div>
+
+        <!-- Museum -->
+        <div id="museum" class="page">
+            <h2>Museum</h2>
+            <p>Kami juga berkunjung ke Bali Museum untuk menambah wawasan tentang Bali Indonesia.</p>
+            <img src="bali museum.jpg" alt="Museum" width="100%">
+        </div>
+    </section>
+
+    <aside>
+        <h3>Tempat Rekomendasi:</h3>
+        <ul>
+            <li>Pantai Kuta</li>
+            <li>Danau Toba</li>
+            <li>Kuliner Bali</li>
+            <li>Bali Museum</li>
+        </ul>
+        <img src="nusa penida.jpg" width="100%" alt="Tempat wisata">
+    </aside>
+
+    <footer>
+        <p>Created by Evan Nugraha | © 2025 My Holiday Website</p>
+    </footer>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
